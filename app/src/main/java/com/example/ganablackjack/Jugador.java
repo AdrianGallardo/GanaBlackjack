@@ -2,7 +2,7 @@ package com.example.ganablackjack;
 
 public class Jugador {
   private Jugada jugada;
-  private Carta[] mano = new Carta[2];
+  private Mano mano;
 
   public Jugada getJugada() {
     return jugada;
@@ -12,14 +12,23 @@ public class Jugador {
     this.jugada = jugada;
   }
 
-  public Carta[] getMano() {
+  public Mano getMano() {
     return mano;
   }
 
-  public void setMano(Carta[] mano) {
+  public void setMano(Mano mano) {
     this.mano = mano;
   }
 
   public Jugador() {
+    mano = new Mano();
+  }
+
+  public void darCarta(Carta carta){
+    mano.sumarCarta(carta);
+  }
+
+  public void retirarCartas(){
+    mano.retirarCartas();
   }
 }

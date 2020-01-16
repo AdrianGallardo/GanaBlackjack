@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Gana Blackjack</string>
+    <string name="boton_plantarse">Plantarse</string>
+    <string name="boton_pedir">Pedir</string>
+    <string name="boton_doblar">Doblar</string>
+    <string name="boton_separar">Separar</string>
 </resources>
