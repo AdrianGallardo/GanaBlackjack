@@ -1,8 +1,10 @@
 package com.example.ganablackjack;
 
+import java.util.ArrayList;
+
 public class Jugador {
   private Jugada jugada;
-  private Mano mano;
+  private ArrayList<Mano> manos = new ArrayList<Mano>();
 
   public Jugada getJugada() {
     return jugada;
@@ -12,23 +14,35 @@ public class Jugador {
     this.jugada = jugada;
   }
 
-  public Mano getMano() {
-    return mano;
+  public ArrayList<Mano> getManos() {
+    return manos;
   }
 
-  public void setMano(Mano mano) {
-    this.mano = mano;
+  public void setManos(ArrayList<Mano> manos) {
+    this.manos = manos;
   }
 
   public Jugador() {
-    mano = new Mano();
+    agregarMano();
   }
 
-  public void darCarta(Carta carta){
-    mano.sumarCarta(carta);
+  public void darCarta(Carta carta, int mano){
+    manos.get(mano).sumarCarta(carta);
   }
 
-  public void retirarCartas(){
-    mano.retirarCartas();
+  public void retirarCartas(int mano){
+    manos.get(mano).retirarCartas();
+  }
+
+  public void agregarMano(){
+    manos.add(new Mano());
+  }
+
+  public int getNumManos(){
+    return manos.size();
+  }
+
+  public Mano getMano(int mano){
+    return manos.get(mano);
   }
 }

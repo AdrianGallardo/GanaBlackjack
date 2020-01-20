@@ -9,7 +9,7 @@ public class Mazo {
   private ArrayList<Carta> pila = new ArrayList<Carta>();
   private ArrayList<Carta> descartadas = new ArrayList<Carta>();
 
-  public Mazo() {
+  public Baraja() {
     int totalCartas = 0;
     for(int i=1; i<=NUM_CARTAS/4; i++){
       cartas[totalCartas].setNumero(i);
@@ -51,7 +51,16 @@ public class Mazo {
   }
 
   public Carta getCarta(){;
-    descartadas.add(pila.remove(0));
-    return descartadas.get(0);
+    Carta descartada = pila.remove(0);
+    descartadas.add(descartada);
+    return descartada;
+  }
+
+  public int getNumCartasPila(){
+    return pila.size();
+  }
+
+  public int gerNumCartasDescartadas(){
+    return descartadas.size();
   }
 }
