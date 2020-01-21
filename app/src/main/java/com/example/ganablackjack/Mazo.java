@@ -4,50 +4,38 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Mazo {
-  static int NUM_CARTAS = 52;
-  private Carta[] cartas = new Carta[NUM_CARTAS];
+  private int nBarajas;
   private ArrayList<Carta> pila = new ArrayList<Carta>();
   private ArrayList<Carta> descartadas = new ArrayList<Carta>();
 
-  public Baraja() {
-    int totalCartas = 0;
-    for(int i=1; i<=NUM_CARTAS/4; i++){
-      cartas[totalCartas].setNumero(i);
-      cartas[totalCartas].setFigura(Figura.ESPADA);
-      pila.add(cartas[totalCartas++]);
-    }
-
-    for(int i=1; i<=NUM_CARTAS/4; i++){
-      cartas[totalCartas].setNumero(i);
-      cartas[totalCartas].setFigura(Figura.CORAZON);
-      pila.add(cartas[totalCartas++]);
-    }
-
-    for(int i=1; i<=NUM_CARTAS/4; i++){
-      cartas[totalCartas].setNumero(i);
-      cartas[totalCartas].setFigura(Figura.TREBOL);
-      pila.add(cartas[totalCartas++]);
-    }
-
-    for(int i=1; i<=NUM_CARTAS/4; i++){
-      cartas[totalCartas].setNumero(i);
-      cartas[totalCartas].setFigura(Figura.DIAMANTE);
-      pila.add(cartas[totalCartas++]);
+  public Mazo(int nBarajas) {
+    setnBarajas(nBarajas);
+    //Se crean y añaden las cartas de cada Baraja a la pila del Mazo
+    for(int i=0; i<nBarajas; i++){
+      Baraja baraja = new Baraja();
+      for (Carta carta :
+              baraja.getCartas()) {
+        pila.add(carta);
+      }
     }
   }
 
   public void barajar(){
+    //Se devuelven las cartas descartadas a la pila del Mazo y se barajan
+    for (Carta carta :
+            descartadas) {
+      pila.add(carta);
+    }
+    descartadas.clear();
     Collections.shuffle(pila);
   }
 
-  public void barajartodo(){
-    pila.clear();
-    descartadas.clear();
+  public int getnBarajas() {
+    return nBarajas;
+  }
 
-    for(int i=0; i<cartas.length; i++){
-      pila.add(cartas[i]);
-    }
-    barajar();
+  public void setnBarajas(int nBarajas) {
+    this.nBarajas = nBarajas;
   }
 
   public Carta getCarta(){;
