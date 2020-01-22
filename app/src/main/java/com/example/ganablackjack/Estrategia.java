@@ -8,10 +8,10 @@ public class Estrategia {
   public Jugada dicta(Mano jugador, Mano crupier){
     Jugada jugada = null;
 
-    if(jugador.getTipo()==TipoMano.BLANDA){
+    if(jugador.getTipo()==TipoMano.SUAVE){
       switch(crupier.getCartaAbierta().getNumero()){
         case 2:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -39,7 +39,7 @@ public class Estrategia {
           }
           break;
         case 3:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -67,7 +67,7 @@ public class Estrategia {
           }
           break;
         case 4:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -95,7 +95,7 @@ public class Estrategia {
           }
           break;
         case 5:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -123,7 +123,7 @@ public class Estrategia {
           }
           break;
         case 6:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -152,7 +152,7 @@ public class Estrategia {
           break;
         case 7:
         case 8:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -182,7 +182,7 @@ public class Estrategia {
         case 9:
         case 10:
         case 1:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -215,7 +215,7 @@ public class Estrategia {
         case 2:
         case 3:
         case 4:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 22:
               jugada = Jugada.SEPARAR;
               break;
@@ -250,7 +250,7 @@ public class Estrategia {
           break;
         case 5:
         case 6:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 22:
               jugada = Jugada.SEPARAR;
               break;
@@ -284,7 +284,7 @@ public class Estrategia {
           }
           break;
         case 7:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 22:
               jugada = Jugada.SEPARAR;
               break;
@@ -319,7 +319,7 @@ public class Estrategia {
           break;
         case 8:
         case 9:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 22:
               jugada = Jugada.SEPARAR;
               break;
@@ -354,7 +354,7 @@ public class Estrategia {
           break;
         case 10:
         case 1:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 22:
               jugada = Jugada.SEPARAR;
               break;
@@ -391,7 +391,7 @@ public class Estrategia {
     }else if(jugador.getTipo()==TipoMano.DURA){
       switch(crupier.getCartaAbierta().getNumero()){
         case 2:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -443,7 +443,7 @@ public class Estrategia {
           }
           break;
         case 3:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -497,7 +497,7 @@ public class Estrategia {
         case 4:
         case 5:
         case 6:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -551,7 +551,7 @@ public class Estrategia {
         case 7:
         case 8:
         case 9:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;
@@ -604,7 +604,7 @@ public class Estrategia {
           break;
         case 10:
         case 1:
-          switch (jugador.getTotal1()){
+          switch (jugador.getTotal()){
             case 20:
               jugada = Jugada.PLANTARSE;
               break;

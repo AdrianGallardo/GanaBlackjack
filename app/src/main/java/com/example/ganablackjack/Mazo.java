@@ -24,6 +24,7 @@ public class Mazo {
     //Se devuelven las cartas descartadas a la pila del Mazo y se barajan
     for (Carta carta :
             descartadas) {
+      carta.setPosicion(Posicion.ABIERTA);
       pila.add(carta);
     }
     descartadas.clear();
@@ -40,6 +41,13 @@ public class Mazo {
 
   public Carta getCarta(){;
     Carta descartada = pila.remove(0);
+    descartadas.add(descartada);
+    return descartada;
+  }
+
+  public Carta getCarta(Posicion posicion){;
+    Carta descartada = pila.remove(0);
+    descartada.setPosicion(posicion);
     descartadas.add(descartada);
     return descartada;
   }

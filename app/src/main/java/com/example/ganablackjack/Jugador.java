@@ -3,6 +3,7 @@ package com.example.ganablackjack;
 import java.util.ArrayList;
 
 public class Jugador {
+  private String nombre;
   private Jugada jugada;
   private ArrayList<Mano> manos = new ArrayList<Mano>();
 
@@ -22,7 +23,8 @@ public class Jugador {
     this.manos = manos;
   }
 
-  public Jugador() {
+  public Jugador(String nombre) {
+    this.nombre = nombre;
     agregarMano();
   }
 
@@ -44,5 +46,13 @@ public class Jugador {
 
   public Mano getMano(int mano){
     return manos.get(mano);
+  }
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
 }

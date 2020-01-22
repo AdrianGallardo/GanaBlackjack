@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Mano {
   private ArrayList<Carta> cartas = new ArrayList<Carta>();
   private TipoMano tipo;
-  private int total1;
-  private int total2;
+  private int totalDuro;
+  private int totalSuave;
 
   public Mano() {
     tipo = null;
-    total1 = 0;
-    total2 = 0;
+    totalDuro = 0;
+    totalSuave = 0;
   }
 
   public ArrayList<Carta> getCartas() {
@@ -33,28 +33,24 @@ public class Mano {
   public void sumarCarta(Carta carta){
     cartas.add(carta);
     if(carta.getNumero()==1) {
-      total1 = total1 + carta.getNumero() + 10;
-      total2 = total2 + carta.getNumero();
+      totalDuro = totalDuro + carta.getNumero();
+      totalSuave = totalSuave + carta.getNumero() + 10;
     }else{
-      total1 = total1 + carta.getNumero();
-      total2 = total1;
+      totalDuro = totalDuro + carta.getNumero();
+      totalSuave = totalDuro;
     }
     tipo = validarTipo();
   }
 
   public TipoMano validarTipo() {
-    TipoMano tipo = null;
-    if(cartas.size()>2) {
-      tipo = TipoMano.DURA;
-    }else{
-      if(cartas.size()==2){
-        if(cartas.get(0).getNumero()==cartas.get(1).getNumero()){
-          tipo = TipoMano.PAR;
-        }else if(cartas.get(0).getNumero()==1||cartas.get(1).getNumero()==1){
-          tipo = TipoMano.BLANDA;
-        }else {
-          tipo = TipoMano.DURA;
-        }
+    TipoMano tipo = TipoMano.DURA;
+    if(cartas.size()==2){
+      if(cartas.get(0).getNumero()==cartas.get(1).getNumero()){
+        tipo = TipoMano.PAR;
+      }else if(cartas.get(0).getNumero()==1||cartas.get(1).getNumero()==1){
+        tipo = TipoMano.SUAVE;
+      }else {
+        tipo = TipoMano.DURA;
       }
     }
     return tipo;
@@ -62,25 +58,16 @@ public class Mano {
 
   public void retirarCartas(){
     cartas.clear();
-    total1 = 0;
-    total2 = 0;
+    totalDuro = 0;
+    totalSuave = 0;
     tipo = null;
   }
 
-  public int getTotal1() {
-    return total1;
-  }
-
-  public void setTotal1(int total1) {
-    this.total1 = total1;
-  }
-
-  public int getTotal2() {
-    return total2;
-  }
-
-  public void setTotal2(int total2) {
-    this.total2 = total2;
+  public int getTotal() {
+    if(tipo==TipoMano.DURA)
+      return totalDuro;
+    else
+      return totalSuave;
   }
 
   public Carta getCartaAbierta(){

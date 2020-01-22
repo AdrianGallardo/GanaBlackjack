@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-
-    int numMazos = 6;
+    int nBarajas = 6;
+    Mazo mazo;
     Jugador jugador;
     Jugador crupier;
 
@@ -21,35 +19,167 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void jugar() {
-        //Se crean las barajas para el juego y se añaden al Mazo
-        mazos = new ArrayList<Baraja>();
-        for(int i=0; i<numMazos; i++){
-            Baraja mazo = new Baraja();
-            mazo.barajar();
-            mazos.add(mazo);
-        }
+        //Se crea el Mazo del juego con el número de Barajas definido
+        mazo = new Mazo(nBarajas);
 
         //Se crean los jugadores (el jugador tiene una mano por defecto)
-        jugador = new Jugador();
-        crupier = new Jugador();
+        jugador = new Jugador("Jugador");
+        crupier = new Jugador("Crupier");
 
         /*Se inicia el juego.
           El juego se compone de una ronda con las siguientes acciones:
           -Se reparten 2 cartas abiertas al jugador.
           -Se reparte 1 carta cerrada y 1 carta abierta al crupier.
           -El jugador realiza una serie de jugadas hasta plantarse o pasarse con cada una de sus manos.
-          -El crupier añade cartas a su mano hasta alcanzar una suma mayor igual a 17 o pasarse.
+          -El crupier añade cartas a su mano hasta alcanzar una suma mayor igual a 17 o pasarse (El crupier se da carta en una mano 17 Suave)
           -Se determina al ganador (jugador con puntuación más cercana a 21)
           -Se descartan las cartas repartidas del megamazo (el mazo se vuelve a barajar hasta que reste un número determinado de cartas).
          */
 
-        //Se reparten las cartas a los jugadores.
+        //Se reparten las cartas a los jugadores y se determina la mano inicial como mano en curso.
+        int manoCurso = 0;
         repartirCartas();
+        //Al repartir cartas, se debe validar si hay algún jugador con Blackjack, por lo que se invoca
+        //al método de resultados de la mano en curso.
+        Resultado res = resultado(manoCurso);
+        //Ejecutamos la acción del resultado.
+        if (res == null) {
+            //No se obtuvo Blackjack. Se continua con el juego.
+
+        } else{//Se obtuvo Blackjack de algún jugador.
+            switch (res){
+                case VICTORIA:
+                    victoria(manoCurso);
+                    break;
+                case DERROTA:
+                    derrota(manoCurso);
+                    break;
+                case EMPATE:
+                    empate(manoCurso);
+                    break;
+                case BLACKJACK:
+                    blackjack(manoCurso);
+                    break;
+            }
+        }
+        //Actualizamos las estadisticas del juego.
+        actualizarEstadisticas(res);
+        //Actualizamos la interfaz.
+        actualizarGUI();
+    }
+
+    private Resultado resultado(int manoCurso) {
+        Resultado res = null;
+        //Validamos los resultados de la mano en curso. El crupier sólo tiene una mano.
+        //El ganador será quien tenga una puntuación más cercana a 21 sin pasarse.
+        //Blackjack (21 con dos cartas) gana a cualquier otro 21.
+
+        //Verificamos el número de cartas de los jugadores.
+        //Blackjack sólo se obtiene con 2 cartas.
+        //Validamos si alguno obtuvo BlackJack iniciando por el crupier.
+        if(crupier.getMano(0).getCartas().size() == 2&&jugador.getMano(manoCurso).getCartas().size() == 2){
+            if (crupier.getMano(0).getTotal() == 21) {//Blackjack
+                //Validando si el jugador tiene Blackjack (Empate)
+                if (jugador.getMano(manoCurso).getTotal() == 21) {
+                    res = Resultado.EMPATE;
+                }
+            } else {//El crupier no obtuvo Blackjack. Validamos si el jugador lo obtuvo.
+                if (jugador.getMano(manoCurso).getTotal() == 21) {//Blackjack
+                    res = Resultado.BLACKJACK;
+                }
+            }
+
+        //Al tener más de 2 cartas, ya no es posible obtener Blackjack.
+        }else{
+            //Validamos si alguno se pasó de 21
+            if(crupier.getMano(0).getTotal()>21){//El crupier se pasó de 21.
+                res = Resultado.VICTORIA;
+            }else if(jugador.getMano(manoCurso).getTotal()>21){//El jugador se pasó de 21.
+                res = Resultado.DERROTA;
+            //Ninguno se pasó de 21.
+            }else {
+                //Ningún jugador se pasó. Validamos quien ganó.
+                if (crupier.getMano(0).getTotal() > jugador.getMano(manoCurso).getTotal()) {
+                    //Victoria del crupier.
+                    res = Resultado.DERROTA;
+                } else if (crupier.getMano(0).getTotal() > jugador.getMano(manoCurso).getTotal()) {
+                    //Victoria del jugador.
+                    res = Resultado.VICTORIA;
+                } else if (crupier.getMano(0).getTotal() == jugador.getMano(manoCurso).getTotal()) {
+                    //Empate.
+                    res = Resultado.EMPATE;
+                }
+
+            }
+        }
+        return res;
+    }
+
+    private void actualizarGUI() {
     }
 
     private void repartirCartas() {
-        //Se reparten 2 cartas por Jugador. Las Cartas se toman y retiran de los mazos.
-        //Se valida que haya almenos 40 cartas en el mazo. Si hay menos de 40 se activa una solicitud para bajar cartas.
-        if()
+        int nMano = 0;
+        //Se reparten 2 cartas por Jugador. Las Cartas se toman y retiran del Mazo.
+        //Se valida que haya almenos 20 cartas en el Mazo. Si hay menos de 40 se activa una solicitud para bajar cartas.
+        //Las cartas se dan abiertas por defecto, es posible darlas cerradas.
+        jugador.darCarta(mazo.getCarta(), nMano);
+        jugador.darCarta(mazo.getCarta(), nMano);
+
+        crupier.darCarta(mazo.getCarta(), nMano);
+        crupier.darCarta(mazo.getCarta(Posicion.CERRADA), nMano);
+    }
+
+    private void empate(int nMano) {
+        //En caso de empate se retiran las cartas de la mano empatada del jugador.
+        jugador.retirarCartas(nMano);
+        //Se actualizan las estadisticas
+        actualizarEstadisticas(Resultado.EMPATE);
+    }
+
+    private void victoria(int nMano) {
+        //En caso de victoria se .
+        jugador.retirarCartas(nMano);
+        //Se actualizan las estadisticas
+        actualizarEstadisticas(Resultado.VICTORIA);
+    }
+
+    private void derrota(int nMano) {
+        //En caso de empate se retiran las cartas de la mano empatada del jugador.
+        jugador.retirarCartas(nMano);
+        //Se actualizan las estadisticas
+        actualizarEstadisticas(Resultado.DERROTA);
+    }
+
+    private void actualizarEstadisticas(Resultado resultado) {
+
+    }
+
+    private void plantarse(){
+        //Plantarse significa que el jugador no quiere sumar más cartas a su mano.
+        //El crupier se da cartas si el total de su mano es menor o igual a 16 o si tiene un 17 suave.
+
+    }
+
+    private void blackjack(int nMano) {
+        //Si el crupier obtiene blackjack:
+        //1.- Se retiran las cartas del jugador y del crupier
+        //2.- Se actualizan las estadisticas
+    }
+
+    private void pedir(){
+
+    }
+
+    private void separar(){
+
+    }
+
+    private void doblar(){
+
+    }
+
+    private void rendirse(){
+
     }
 }
