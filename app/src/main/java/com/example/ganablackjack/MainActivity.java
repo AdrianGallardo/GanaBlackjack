@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import java.util.function.ToDoubleBiFunction;
+
 public class MainActivity extends AppCompatActivity {
     int nBarajas = 6;
     Mazo mazo;
     Jugador jugador;
     Jugador crupier;
+    Estadisticas estadisticas;
+    int manoCurso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +41,18 @@ public class MainActivity extends AppCompatActivity {
          */
 
         //Se reparten las cartas a los jugadores y se determina la mano inicial como mano en curso.
-        int manoCurso = 0;
+        manoCurso = 0;
         repartirCartas();
         //Al repartir cartas, se debe validar si hay algún jugador con Blackjack, por lo que se invoca
         //al método de resultados de la mano en curso.
         Resultado res = resultado(manoCurso);
         //Ejecutamos la acción del resultado.
         if (res == null) {
-            //No se obtuvo Blackjack. Se continua con el juego.
-
+            //No se obtuvo Blackjack, el juego continua.
+            //Esperamos la acción del jugador.
         } else{//Se obtuvo Blackjack de algún jugador.
             switch (res){
+                //TODO: implementar las acciones de estas funciones
                 case VICTORIA:
                     victoria(manoCurso);
                     break;
@@ -62,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
-        //Actualizamos las estadisticas del juego.
-        actualizarEstadisticas(res);
         //Actualizamos la interfaz.
         actualizarGUI();
     }
@@ -152,13 +155,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void actualizarEstadisticas(Resultado resultado) {
-
+        switch (resultado){
+            case VICTORIA:
+                estadisticas.victoria();
+                break;
+            case DERROTA:
+                estadisticas.derrota();
+                break;
+            case EMPATE:
+                estadisticas.empate();
+                break;
+            case BLACKJACK:
+                estadisticas.blackjack();
+                break;
+        }
     }
 
     private void plantarse(){
         //Plantarse significa que el jugador no quiere sumar más cartas a su mano.
         //El crupier se da cartas si el total de su mano es menor o igual a 16 o si tiene un 17 suave.
-
+        while (crupier.getMano(0).getTotal()<17||
+                (crupier.getMano(0).getTotal()==17&&crupier.getMano(0).getTipo()==TipoMano.SUAVE)){
+            crupier.darCarta(mazo.getCarta(), 0);
+        }
+        //Cuando el crupier termina de darse cartas se valida el resultado de la partida.
+        resultado(manoCurso);
     }
 
     private void blackjack(int nMano) {
@@ -168,10 +189,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pedir(){
-
+        //Pedir significa dar cartas a la mano en curso del jugador.
+        jugador.darCarta(mazo.getCarta(), manoCurso);
     }
 
     private void separar(){
+        //Separar significa quitar una carta del jugador y colocarla en una nueva mano.
+        //Se crea una nueva mano para el jugador.
 
     }
 
