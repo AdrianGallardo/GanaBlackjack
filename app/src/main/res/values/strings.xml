@@ -4,4 +4,6 @@
     <string name="boton_pedir">Pedir</string>
     <string name="boton_doblar">Doblar</string>
     <string name="boton_separar">Separar</string>
+    <string name="boton_barajar">Barajar</string>
+    <string name="boton_estrategia">Estrategia</string>
 </resources>
