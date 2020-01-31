@@ -6,4 +6,18 @@
     <string name="boton_separar">Separar</string>
     <string name="boton_barajar">Barajar</string>
     <string name="boton_estrategia">Estrategia</string>
+    <string name="label_repartidas">Cartas repartidas:</string>
+    <string name="label_restantes">Cartas restantes:</string>
+    <string name="label_victorias">Victorias:</string>
+    <string name="label_derrotas">Derrotas:</string>
+    <string name="label_empates">Empates:</string>
+    <string name="label_proporcionv">Proporción de victorias:</string>
+    <string name="label_racha">Racha de aciertos:</string>
+    <string name="label_res_victoria">VICTORIA</string>
+    <string name="label_res_derrota">DERROTA</string>
+    <string name="label_res_empate">EMPATE</string>
+    <string name="label_res_blackjack">BLACK JACK</string>
+    <string name="label_total_s">Suave</string>
+    <string name="label_total_d">Duro</string>
+    <string name="label_total_b">Black Jack</string>
 </resources>
