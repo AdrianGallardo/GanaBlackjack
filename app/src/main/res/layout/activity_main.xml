@@ -8,20 +8,20 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView_j1"
+        android:id="@+id/imageView_ja1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
         android:background="@drawable/ic_8_of_hearts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_j2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_jb1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_j2"
+        app:layout_constraintTop_toTopOf="@+id/imageView_jb1"
         app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@drawable/ic_8_of_hearts" />
 
     <ImageView
-        android:id="@+id/imageView_j2"
+        android:id="@+id/imageView_jb1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
         android:background="@drawable/ic_ace_of_spades"
@@ -34,20 +34,20 @@
         tools:srcCompat="@drawable/ic_ace_of_spades" />
 
     <ImageView
-        android:id="@+id/imageView_c1"
+        android:id="@+id/imageView_ca1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
         android:background="@drawable/ic_3_of_spades"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_c2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_cb1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_c2"
+        app:layout_constraintTop_toTopOf="@+id/imageView_cb1"
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@drawable/ic_3_of_spades" />
 
     <ImageView
-        android:id="@+id/imageView_c2"
+        android:id="@+id/imageView_cb1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
         android:background="@drawable/ic_1b"
@@ -58,6 +58,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
         tools:srcCompat="@drawable/ic_1b" />
+
+    <ImageView
+        android:id="@+id/imageView_j1"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_hearts"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_jb1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_jb1"
+        tools:srcCompat="@drawable/ic_ace_of_hearts" />
+
+    <ImageView
+        android:id="@+id/imageView_j2"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_hearts"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_j1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH50"
+        app:layout_constraintVertical_bias="0.85"
+        tools:srcCompat="@drawable/ic_2_of_hearts" />
+
+    <ImageView
+        android:id="@+id/imageView_j3"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_hearts"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_j1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH50"
+        app:layout_constraintVertical_bias="0.7"
+        tools:srcCompat="@drawable/ic_3_of_hearts" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineV25"
@@ -256,7 +293,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias=".98"
         app:layout_constraintStart_toStartOf="@+id/guidelineV25"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_c1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_ca1"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
@@ -269,7 +306,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
         app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_j2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_jb1"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
@@ -303,7 +340,7 @@
         android:text="@string/label_racha"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/blanco"
-        app:layout_constraintBottom_toTopOf="@+id/imageView_c1"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_ca1"
         app:layout_constraintStart_toStartOf="@+id/textView_proporcionv"
         app:layout_constraintTop_toBottomOf="@+id/textView_proporcionv"
         app:layout_constraintVertical_bias="0.0" />
