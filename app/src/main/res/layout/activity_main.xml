@@ -4,59 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/azul"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView_j1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/diamond_queen"
+        android:background="@drawable/ic_8_of_hearts"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_j2"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView_j2"
         app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@drawable/diamond_queen" />
+        tools:srcCompat="@drawable/ic_8_of_hearts" />
 
     <ImageView
         android:id="@+id/imageView_j2"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/diamond_1"
+        android:background="@drawable/ic_ace_of_spades"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="@+id/guidelineV50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.75"
-        tools:srcCompat="@drawable/diamond_1" />
+        tools:srcCompat="@drawable/ic_ace_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_c1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/club_king"
+        android:background="@drawable/ic_3_of_spades"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_c2"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView_c2"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/club_king" />
+        tools:srcCompat="@drawable/ic_3_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_c2"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/club_1"
+        android:background="@drawable/ic_1b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="@+id/guidelineV50"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
-        tools:srcCompat="@drawable/club_1" />
+        tools:srcCompat="@drawable/ic_1b" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineV25"
@@ -173,6 +174,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/label_repartidas"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_victorias_x"
         app:layout_constraintEnd_toStartOf="@+id/textView_repartidas_x"
         app:layout_constraintHorizontal_bias="1.0"
@@ -186,6 +188,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_restantes"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toTopOf="@+id/textView_proporcionv_x"
         app:layout_constraintEnd_toStartOf="@+id/textView_restantes_x"
         app:layout_constraintStart_toStartOf="@+id/textView_repartidas"
@@ -199,6 +202,7 @@
         android:gravity="right"
         android:text="230"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_restantes"
         app:layout_constraintEnd_toEndOf="@+id/textView_repartidas_x"
         app:layout_constraintTop_toTopOf="@+id/textView_restantes"
@@ -214,6 +218,7 @@
         android:gravity="right"
         android:text="34"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toTopOf="@+id/textView_restantes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -224,6 +229,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_res_blackjack"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -234,6 +240,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_total_d"
+        android:textColor="@color/blanco"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView_total_c_x"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
         app:layout_constraintHorizontal_bias="0.02"
@@ -244,6 +251,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="17"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toTopOf="@+id/guidelineH50"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias=".98"
@@ -256,6 +264,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_total_s"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeparar"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
         app:layout_constraintHorizontal_bias="0.02"
@@ -268,6 +277,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="17"
+        android:textColor="@color/blanco"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView_total_j"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias=".98"
@@ -282,6 +292,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/label_victorias"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -291,6 +302,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_racha"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toTopOf="@+id/imageView_c1"
         app:layout_constraintStart_toStartOf="@+id/textView_proporcionv"
         app:layout_constraintTop_toBottomOf="@+id/textView_proporcionv"
@@ -302,6 +314,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_proporcionv"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="@+id/textView_derrotas"
         app:layout_constraintTop_toBottomOf="@+id/textView_derrotas" />
 
@@ -310,6 +323,8 @@
         android:layout_width="151dp"
         android:layout_height="wrap_content"
         android:text="@string/label_derrotas"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="@+id/textView_victorias"
         app:layout_constraintTop_toBottomOf="@+id/textView_victorias" />
 
@@ -320,6 +335,7 @@
         android:gravity="right"
         android:text="1000"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_victorias"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -332,6 +348,7 @@
         android:gravity="right"
         android:text="58%"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_proporcionv"
         app:layout_constraintEnd_toEndOf="@+id/textView_derrotas_x" />
 
@@ -342,6 +359,7 @@
         android:gravity="right"
         android:text="7"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_derrotas"
         app:layout_constraintEnd_toEndOf="@+id/textView_victorias_x" />
 
@@ -352,7 +370,9 @@
         android:gravity="right"
         android:text="90.99%"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/blanco"
         app:layout_constraintBottom_toBottomOf="@+id/textView_racha"
         app:layout_constraintEnd_toEndOf="@+id/textView_proporcionv_x" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
