@@ -11,14 +11,157 @@
         android:id="@+id/imageView_ja1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/ic_8_of_hearts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_jb1"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_jb1"
-        app:layout_constraintVertical_bias="1.0"
-        tools:srcCompat="@drawable/ic_8_of_hearts" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_ace_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja2"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_2_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja3"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_3_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja4"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_4_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_4_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja5"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_5_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_5_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja6"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_6_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_6_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja7"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_7_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_7_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja8"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_8_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_8_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja9"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_9_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_9_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja10"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_jack_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja11"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_queen_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_ja12"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64"
+        tools:srcCompat="@drawable/ic_king_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_jb1"
@@ -26,75 +169,467 @@
         android:layout_height="122dp"
         android:background="@drawable/ic_ace_of_spades"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
-        tools:srcCompat="@drawable/ic_ace_of_spades" />
-
-    <ImageView
-        android:id="@+id/imageView_ca1"
-        android:layout_width="84.5dp"
-        android:layout_height="122dp"
-        android:background="@drawable/ic_3_of_spades"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_cb1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_cb1"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/ic_3_of_spades" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_ace_of_spades" />
 
     <ImageView
-        android:id="@+id/imageView_cb1"
+        android:id="@+id/imageView_jb2"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/ic_1b"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_2_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb3"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="@+id/guidelineV50"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        tools:srcCompat="@drawable/ic_1b" />
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_3_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb4"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_4_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_4_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb5"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_5_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_5_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb6"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_6_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_6_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb7"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_7_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_7_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb8"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_8_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_8_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb9"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_9_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_9_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb10"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_jack_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb11"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_queen_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_jb12"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87"
+        tools:srcCompat="@drawable/ic_king_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_j1"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/ic_ace_of_hearts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_jb1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView_jb1"
-        tools:srcCompat="@drawable/ic_ace_of_hearts" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_ace_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_j2"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/ic_2_of_hearts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_j1"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH50"
-        app:layout_constraintVertical_bias="0.85"
-        tools:srcCompat="@drawable/ic_2_of_hearts" />
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_2_of_spades" />
 
     <ImageView
         android:id="@+id/imageView_j3"
         android:layout_width="84.5dp"
         android:layout_height="122dp"
-        android:background="@drawable/ic_3_of_hearts"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_j1"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_3_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j4"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_4_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_4_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j5"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_5_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_5_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j6"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_6_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_6_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j7"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_7_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_7_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j8"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_8_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_8_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j9"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_9_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_9_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j10"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_jack_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j11"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_queen_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_j12"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/imageView_j1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        tools:srcCompat="@drawable/ic_king_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c1"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineH50"
-        app:layout_constraintVertical_bias="0.7"
-        tools:srcCompat="@drawable/ic_3_of_hearts" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_ace_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c2"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_2_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c3"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_3_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c4"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_4_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_4_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c5"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_5_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_5_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c6"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_6_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_6_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c7"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_7_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_7_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c8"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_8_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_8_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c9"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_9_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_9_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c10"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_ace_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_jack_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c11"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_2_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_queen_of_spades" />
+
+    <ImageView
+        android:id="@+id/imageView_c12"
+        android:layout_width="84.5dp"
+        android:layout_height="122dp"
+        android:background="@drawable/ic_3_of_spades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/imageView_c1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:srcCompat="@drawable/ic_king_of_spades" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineV25"
@@ -293,7 +828,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias=".98"
         app:layout_constraintStart_toStartOf="@+id/guidelineV25"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_ca1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_c1"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
@@ -306,7 +841,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineV75"
         app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="@+id/guidelineV50"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_jb1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_j1"
         app:layout_constraintVertical_bias="0.25" />
 
     <TextView
@@ -319,6 +854,52 @@
         app:layout_constraintEnd_toStartOf="@+id/guidelineV50"
         app:layout_constraintHorizontal_bias=".98"
         app:layout_constraintStart_toStartOf="@+id/guidelineV25" />
+
+    <TextView
+        android:id="@+id/textView_total_ja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_total_s"
+        android:textColor="@color/blanco"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_ja1"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_ja1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_ja1"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView_total_ja_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="17"
+        android:textColor="@color/blanco"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_total_ja"
+        app:layout_constraintEnd_toStartOf="@+id/textView_total_ja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"/>
+
+    <TextView
+        android:id="@+id/textView_total_jb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_total_s"
+        android:textColor="@color/blanco"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_jb1"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_jb1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_jb1"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView_total_jb_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="17"
+        android:textColor="@color/blanco"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_total_jb"
+        app:layout_constraintEnd_toStartOf="@+id/textView_total_jb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"/>
 
     <TextView
         android:id="@+id/textView_victorias"
@@ -340,7 +921,7 @@
         android:text="@string/label_racha"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/blanco"
-        app:layout_constraintBottom_toTopOf="@+id/imageView_ca1"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_c1"
         app:layout_constraintStart_toStartOf="@+id/textView_proporcionv"
         app:layout_constraintTop_toBottomOf="@+id/textView_proporcionv"
         app:layout_constraintVertical_bias="0.0" />
