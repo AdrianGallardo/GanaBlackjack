@@ -56,7 +56,7 @@ public class Mazo {
     return pila.size();
   }
 
-  public int gerNumCartasDescartadas(){
+  public int getNumCartasDescartadas(){
     return descartadas.size();
   }
 }

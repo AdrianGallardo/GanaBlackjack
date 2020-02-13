@@ -1,8 +1,16 @@
 package com.example.ganablackjack;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.function.ToDoubleBiFunction;
 
@@ -12,12 +20,39 @@ public class MainActivity extends AppCompatActivity {
     Jugador jugador;
     Jugador crupier;
     Estadisticas estadisticas;
-    int manoCurso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button botonPedir = findViewById(R.id.buttonPedir);
+        botonPedir.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                pedir();
+            }
+        });
+
+        Button botonPlantarse = findViewById(R.id.buttonPlantarse);
+        botonPlantarse.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                plantarse();
+            }
+        });
+
+        Button botonSeparar = findViewById(R.id.buttonSeparar);
+        botonSeparar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                separar();
+            }
+        });
+
+        Button botonDoblar = findViewById(R.id.buttonDoblar);
+        botonDoblar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                doblar();
+            }
+        });
 
         jugar();
     }
@@ -37,82 +72,102 @@ public class MainActivity extends AppCompatActivity {
           -El jugador realiza una serie de jugadas hasta plantarse o pasarse con cada una de sus manos.
           -El crupier añade cartas a su mano hasta alcanzar una suma mayor igual a 17 o pasarse (El crupier se da carta en una mano 17 Suave)
           -Se determina al ganador (jugador con puntuación más cercana a 21)
-          -Se descartan las cartas repartidas del megamazo (el mazo se vuelve a barajar hasta que reste un número determinado de cartas).
          */
 
         //Se reparten las cartas a los jugadores y se determina la mano inicial como mano en curso.
-        manoCurso = 0;
+        mazo.barajar();
         repartirCartas();
+
+        //Se inhabilitan los botones a esperar resultados de las cartas repartidas.
+        inhabilitarBotones();
+
         //Al repartir cartas, se debe validar si hay algún jugador con Blackjack, por lo que se invoca
         //al método de resultados de la mano en curso.
-        Resultado res = resultado(manoCurso);
-        //Ejecutamos la acción del resultado.
-        if (res == null) {
-            //No se obtuvo Blackjack, el juego continua.
-            //Esperamos la acción del jugador.
-        } else{//Se obtuvo Blackjack de algún jugador.
-            switch (res){
-                //TODO: implementar las acciones de estas funciones
-                case VICTORIA:
-                    victoria(manoCurso);
-                    break;
-                case DERROTA:
-                    derrota(manoCurso);
-                    break;
-                case EMPATE:
-                    empate(manoCurso);
-                    break;
-                case BLACKJACK:
-                    blackjack(manoCurso);
-                    break;
-            }
+        Resultado res = resultado(jugador.getMano(jugador.getManoCurso()));
+        //Al repartir cartas, unicamente puede obtenerse Blackjack del jugador(VICTORIA) o del Crupier(DERROTA)
+        if(res==Resultado.BLACKJACK){//Blackjack del jugador
+            blackjack(jugador.getManoCurso());
+        }else if(res==Resultado.DERROTA){//Blackjack del crupier
+            derrota(jugador.getManoCurso());
         }
-        //Actualizamos la interfaz.
-        actualizarGUI();
+
+        //El juego continua dependiendo de la acción del jugador.
+        //Se habilitan los botones.
+        habilitarBotones();
+
+        if(jugador.getMano(jugador.getManoCurso()).getTipo()!=TipoMano.PAR) {//Se inhabilita el boton de separar si la mano del jugador no es par.
+            inhabilitarBoton((Button) findViewById(R.id.buttonSeparar));
+        }
     }
 
-    private Resultado resultado(int manoCurso) {
+    private void inhabilitarBoton(Button boton) {
+        boton.setEnabled(false);
+    }
+
+    private void inhabilitarBotones() {
+        Button botonPedir = findViewById(R.id.buttonPedir);
+        Button botonPlantarse = findViewById(R.id.buttonPlantarse);
+        Button botonSeparar = findViewById(R.id.buttonSeparar);
+        Button botonDoblar = findViewById(R.id.buttonDoblar);
+
+        botonPedir.setEnabled(false);
+        botonPlantarse.setEnabled(false);
+        botonSeparar.setEnabled(false);
+        botonDoblar.setEnabled(false);
+    }
+
+    private void habilitarBotones(){
+        Button botonPedir = findViewById(R.id.buttonPedir);
+        Button botonPlantarse = findViewById(R.id.buttonPlantarse);
+        Button botonSeparar = findViewById(R.id.buttonSeparar);
+        Button botonDoblar = findViewById(R.id.buttonDoblar);
+
+        botonPedir.setEnabled(true);
+        botonPlantarse.setEnabled(true);
+        botonSeparar.setEnabled(true);
+        botonDoblar.setEnabled(true);
+    }
+
+    private void habilitarBoton(Button boton){
+        boton.setEnabled(true);
+    }
+
+    private Resultado resultado(Mano manoJugador) {
         Resultado res = null;
         //Validamos los resultados de la mano en curso. El crupier sólo tiene una mano.
         //El ganador será quien tenga una puntuación más cercana a 21 sin pasarse.
         //Blackjack (21 con dos cartas) gana a cualquier otro 21.
 
         //Verificamos el número de cartas de los jugadores.
+
         //Blackjack sólo se obtiene con 2 cartas.
         //Validamos si alguno obtuvo BlackJack iniciando por el crupier.
-        if(crupier.getMano(0).getCartas().size() == 2&&jugador.getMano(manoCurso).getCartas().size() == 2){
-            if (crupier.getMano(0).getTotal() == 21) {//Blackjack
-                //Validando si el jugador tiene Blackjack (Empate)
-                if (jugador.getMano(manoCurso).getTotal() == 21) {
+        if(crupier.getMano(crupier.getManoCurso()).getCartas().size()==2&&
+            manoJugador.getCartas().size()==2){
+            if(crupier.getMano(crupier.getManoCurso()).getTipo()==TipoMano.BLACKJACK) {
+                //Verifica empate
+                if (manoJugador.getTipo() == TipoMano.BLACKJACK) {
                     res = Resultado.EMPATE;
+                } else {//Derrota del jugador
+                    res = Resultado.DERROTA;
                 }
-            } else {//El crupier no obtuvo Blackjack. Validamos si el jugador lo obtuvo.
-                if (jugador.getMano(manoCurso).getTotal() == 21) {//Blackjack
-                    res = Resultado.BLACKJACK;
-                }
+            }else if(manoJugador.getTipo()==TipoMano.BLACKJACK) {
+                res = Resultado.BLACKJACK;
             }
 
-        //Al tener más de 2 cartas, ya no es posible obtener Blackjack.
-        }else{
-            //Validamos si alguno se pasó de 21
-            if(crupier.getMano(0).getTotal()>21){//El crupier se pasó de 21.
-                res = Resultado.VICTORIA;
-            }else if(jugador.getMano(manoCurso).getTotal()>21){//El jugador se pasó de 21.
-                res = Resultado.DERROTA;
-            //Ninguno se pasó de 21.
-            }else {
-                //Ningún jugador se pasó. Validamos quien ganó.
-                if (crupier.getMano(0).getTotal() > jugador.getMano(manoCurso).getTotal()) {
-                    //Victoria del crupier.
+        }else{//No se obtuvo Blackjack. Validamos quién se acercó más a 21.
+            //Este método se ejecuta sólo para validar resultados de una mano que se plantó.
+            //El que una mano se pase de 21 se valida al dar una carta a la mano en curso.
+            if(manoJugador.getTipo()==TipoMano.PLANTADA) {
+                if (crupier.getMano(crupier.getManoCurso()).getTotal() >
+                        manoJugador.getTotal()) {//El crupier tiene más puntaje que la mano del jugador. Sabemos que ninguno se pasó de 21.
                     res = Resultado.DERROTA;
-                } else if (crupier.getMano(0).getTotal() > jugador.getMano(manoCurso).getTotal()) {
-                    //Victoria del jugador.
+                } else if (crupier.getMano(crupier.getManoCurso()).getTotal() <
+                        manoJugador.getTotal()) {//La mano del jugador tiene más puntaje que el jugador. Sabemos que ninguno se pasó de 21.
                     res = Resultado.VICTORIA;
-                } else if (crupier.getMano(0).getTotal() == jugador.getMano(manoCurso).getTotal()) {
-                    //Empate.
+                } else {//Empate
                     res = Resultado.EMPATE;
                 }
-
             }
         }
         return res;
@@ -122,15 +177,129 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void repartirCartas() {
-        int nMano = 0;
         //Se reparten 2 cartas por Jugador. Las Cartas se toman y retiran del Mazo.
         //Se valida que haya almenos 20 cartas en el Mazo. Si hay menos de 40 se activa una solicitud para bajar cartas.
         //Las cartas se dan abiertas por defecto, es posible darlas cerradas.
-        jugador.darCarta(mazo.getCarta(), nMano);
-        jugador.darCarta(mazo.getCarta(), nMano);
+        jugador.darCarta(mazo.getCarta(), jugador.getManoCurso());
+        mostrarCartas(jugador);
+        jugador.darCarta(mazo.getCarta(), jugador.getManoCurso());
+        mostrarCartas(jugador);
 
-        crupier.darCarta(mazo.getCarta(), nMano);
-        crupier.darCarta(mazo.getCarta(Posicion.CERRADA), nMano);
+        crupier.darCarta(mazo.getCarta(), crupier.getManoCurso());
+        mostrarCartas(crupier);
+        crupier.darCarta(mazo.getCarta(Posicion.CERRADA), crupier.getManoCurso());
+        mostrarCartas(crupier);
+        actualizarEtiquetas();
+    }
+
+    private void retirarCartas(){
+        //Retirar las cartas significa quitar las cartas de cada mano del jugador y del crupier.
+        //Las cartas están respaldadas en las cartas descartadas del mazo.
+        for(int i=0; i<jugador.getManos().size(); i++){
+            jugador.retirarCartas(i);
+        }
+        crupier.retirarCartas(crupier.getManoCurso());
+    }
+
+    private void actualizarEtiquetas() {
+        //Actualiza las etiquetas de totales, cartas repartidas y restantes.
+        //Actualizando totales
+        String nombreTextTipo;
+        String nombreTextTotal;
+        switch (jugador.getManoCurso()){
+            case 1:
+                nombreTextTipo = "textView_total_ja";
+                nombreTextTotal = "textView_total_ja_x";
+                break;
+            case 2:
+                nombreTextTipo = "textView_total_jb";
+                nombreTextTotal = "textView_total_jb_x";
+                break;
+            default:
+                nombreTextTipo = "textView_total_j";
+                nombreTextTotal = "textView_total_j_x";
+        }
+        TextView totalJugador = findViewById(getResources().getIdentifier(nombreTextTotal, "id", getPackageName()));
+        totalJugador.setText(String.valueOf(jugador.getMano(jugador.getManoCurso()).getTotal()));
+
+        TextView tipoManoJugador = findViewById(getResources().getIdentifier(nombreTextTipo, "id", getPackageName()));
+        switch(jugador.getMano(jugador.getManoCurso()).getTipo()){
+            case SUAVE:
+                tipoManoJugador.setText(R.string.label_total_s);
+                break;
+            case DURA:
+                tipoManoJugador.setText(R.string.label_total_d);
+                break;
+            case BLACKJACK:
+                tipoManoJugador.setText(R.string.label_total_b);
+                break;
+        }
+        totalJugador.setVisibility(View.VISIBLE);
+        tipoManoJugador.setVisibility(View.VISIBLE);
+
+        TextView totalCrupier = findViewById(R.id.textView_total_c_x);
+        totalCrupier.setText(String.valueOf(crupier.getMano(crupier.getManoCurso()).getTotal()));
+
+        TextView tipoManoCrupier = findViewById(R.id.textView_total_c);
+        switch(crupier.getMano(crupier.getManoCurso()).getTipo()){
+            case SUAVE:
+                tipoManoCrupier.setText(R.string.label_total_s);
+                break;
+            case DURA:
+                tipoManoCrupier.setText(R.string.label_total_d);
+                break;
+            case BLACKJACK:
+                tipoManoCrupier.setText(R.string.label_total_b);
+                break;
+        }
+        totalCrupier.setVisibility(View.VISIBLE);
+        tipoManoCrupier.setVisibility(View.VISIBLE);
+
+        //Actualizando info. del mazo.
+        TextView repartidasX = findViewById(R.id.textView_repartidas_x);
+        TextView restantesX = findViewById(R.id.textView_restantes_x);
+
+        repartidasX.setText(String.valueOf(mazo.getNumCartasDescartadas()));
+        restantesX.setText(String.valueOf(mazo.getNumCartasPila()));
+    }
+
+    private void mostrarCartas(Jugador jugador) {
+        if(jugador.getNombre()=="Jugador"){
+            int pos = 1;
+            for(Carta carta: jugador.getMano(jugador.getManoCurso()).getCartas()) {
+                String nombreVista;
+                switch (jugador.getManoCurso()) {
+                    case 1:
+                        nombreVista = "imageView_ja";
+                        break;
+                    case 2:
+                        nombreVista = "imageView_jb";
+                        break;
+                        default:
+                            nombreVista = "imageView_j";
+
+                }
+                ImageView imageCarta = findViewById(getResources().getIdentifier(nombreVista + (pos++), "id", getPackageName()));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    imageCarta.setBackground(ResourcesCompat.getDrawable(getResources(), carta.getIdRecursoImagen(), null));
+                } else {
+                    imageCarta.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), carta.getIdRecursoImagen(), null));
+                }
+                imageCarta.setVisibility(View.VISIBLE);
+            }
+        }else if(jugador.getNombre()=="Crupier"){
+            int pos = 1;
+            for(Carta carta: jugador.getMano(jugador.getManoCurso()).getCartas()) {
+                String nombreVista = "imageView_c";
+                ImageView imageCarta = findViewById(getResources().getIdentifier(nombreVista + (pos++), "id", getPackageName()));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    imageCarta.setBackground(ResourcesCompat.getDrawable(getResources(), carta.getIdRecursoImagen(), null));
+                } else {
+                    imageCarta.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), carta.getIdRecursoImagen(), null));
+                }
+                imageCarta.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     private void empate(int nMano) {
@@ -148,9 +317,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void derrota(int nMano) {
-        //En caso de empate se retiran las cartas de la mano empatada del jugador.
-        jugador.retirarCartas(nMano);
-        //Se actualizan las estadisticas
+        jugador.getMano(nMano).setResultado(Resultado.DERROTA);
+        retirarCartas();
+        repartirCartas();
         actualizarEstadisticas(Resultado.DERROTA);
     }
 
@@ -179,23 +348,27 @@ public class MainActivity extends AppCompatActivity {
             crupier.darCarta(mazo.getCarta(), 0);
         }
         //Cuando el crupier termina de darse cartas se valida el resultado de la partida.
-        resultado(manoCurso);
+        resultado(jugador.getMano(jugador.getManoCurso()));
     }
 
     private void blackjack(int nMano) {
-        //Si el crupier obtiene blackjack:
-        //1.- Se retiran las cartas del jugador y del crupier
-        //2.- Se actualizan las estadisticas
+        jugador.getMano(jugador.getManoCurso()).setResultado(Resultado.BLACKJACK);
+        retirarCartas();
+        repartirCartas();
+        actualizarEstadisticas(Resultado.BLACKJACK);
     }
 
     private void pedir(){
         //Pedir significa dar cartas a la mano en curso del jugador.
-        jugador.darCarta(mazo.getCarta(), manoCurso);
+        jugador.darCarta(mazo.getCarta(), jugador.getManoCurso());
+        mostrarCartas(jugador);
+        actualizarEtiquetas();
     }
 
     private void separar(){
         //Separar significa quitar una carta del jugador y colocarla en una nueva mano.
         //Se crea una nueva mano para el jugador.
+
 
     }
 

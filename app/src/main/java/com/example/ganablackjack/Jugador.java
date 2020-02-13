@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Jugador {
   private String nombre;
   private Jugada jugada;
+  private int manoCurso;
   private ArrayList<Mano> manos = new ArrayList<Mano>();
 
   public Jugada getJugada() {
@@ -25,6 +26,7 @@ public class Jugador {
 
   public Jugador(String nombre) {
     this.nombre = nombre;
+    this.manoCurso = 0;
     agregarMano();
   }
 
@@ -54,5 +56,13 @@ public class Jugador {
 
   public void setNombre(String nombre) {
     this.nombre = nombre;
+  }
+
+  public int getManoCurso() {
+    return manoCurso;
+  }
+
+  public void setManoCurso(int manoCurso) {
+    this.manoCurso = manoCurso;
   }
 }

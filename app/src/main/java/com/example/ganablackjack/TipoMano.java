@@ -1,5 +1,5 @@
 package com.example.ganablackjack;
 
 public enum TipoMano {
-  DURA, SUAVE, PAR;
+  DURA, SUAVE, PAR, BLACKJACK, PASADA, PLANTADA;
 }

@@ -7,11 +7,13 @@ public class Mano {
   private TipoMano tipo;
   private int totalDuro;
   private int totalSuave;
+  private Resultado resultado;
 
   public Mano() {
     tipo = null;
     totalDuro = 0;
     totalSuave = 0;
+    resultado = null;
   }
 
   public ArrayList<Carta> getCartas() {
@@ -45,12 +47,18 @@ public class Mano {
   public TipoMano validarTipo() {
     TipoMano tipo = TipoMano.DURA;
     if(cartas.size()==2){
-      if(cartas.get(0).getNumero()==cartas.get(1).getNumero()){
+      if(cartas.get(0).getNumero()+cartas.get(1).getNumero()==21){
+        tipo = TipoMano.BLACKJACK;
+      }else if(cartas.get(0).getNumero()==cartas.get(1).getNumero()){
         tipo = TipoMano.PAR;
       }else if(cartas.get(0).getNumero()==1||cartas.get(1).getNumero()==1){
         tipo = TipoMano.SUAVE;
       }else {
         tipo = TipoMano.DURA;
+      }
+    }else{
+      if(getTotal()>21){
+        tipo = TipoMano.PASADA;
       }
     }
     return tipo;
@@ -78,5 +86,13 @@ public class Mano {
       }
     }
     return cartaAbierta;
+  }
+
+  public Resultado getResultado() {
+    return resultado;
+  }
+
+  public void setResultado(Resultado resultado) {
+    this.resultado = resultado;
   }
 }

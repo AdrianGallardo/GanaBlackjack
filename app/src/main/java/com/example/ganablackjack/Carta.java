@@ -4,11 +4,13 @@ public class Carta implements Comparable{
   private int numero;
   private Figura figura;
   private Posicion posicion;
+  private int idRecursoImagen;
 
-  public Carta(int numero, Figura figura, Posicion posicion) {
+  public Carta(int numero, Figura figura, Posicion posicion, int idRecursoImagen) {
     this.numero = numero;
     this.figura = figura;
     this.posicion = posicion;
+    this.idRecursoImagen = idRecursoImagen;
   }
 
   public int getNumero() {
@@ -25,6 +27,7 @@ public class Carta implements Comparable{
 
   public void setPosicion(Posicion posicion) {
     this.posicion = posicion;
+    setIdRecursoImagen(R.drawable.ic_1b);
   }
 
   public Figura getFigura() {
@@ -33,6 +36,14 @@ public class Carta implements Comparable{
 
   public void setFigura(Figura figura) {
     this.figura = figura;
+  }
+
+  public int getIdRecursoImagen() {
+    return idRecursoImagen;
+  }
+
+  public void setIdRecursoImagen(int idRecursoImagen) {
+    this.idRecursoImagen = idRecursoImagen;
   }
 
   @Override
