@@ -45,7 +45,7 @@ public class Mano {
   }
 
   public TipoMano validarTipo() {
-    TipoMano tipo = TipoMano.DURA;
+    TipoMano tipo = TipoMano.PLANTADA;
     if(cartas.size()==2){
       if(cartas.get(0).getNumero()+cartas.get(1).getNumero()==21){
         tipo = TipoMano.BLACKJACK;
