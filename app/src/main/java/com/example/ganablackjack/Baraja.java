@@ -20,8 +20,8 @@ public class Baraja {
     cartas.add(new Carta(8, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_8_of_clubs));
     cartas.add(new Carta(9, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_9_of_clubs));
     cartas.add(new Carta(10, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_10_of_clubs));
-    cartas.add(new Carta(11, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_10_of_clubs));
-    cartas.add(new Carta(12, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_10_of_clubs));
+    cartas.add(new Carta(10, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_10_of_clubs));
+    cartas.add(new Carta(10, Figura.TREBOL, Posicion.ABIERTA, R.drawable.ic_10_of_clubs));
 
     cartas.add(new Carta(1, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_ace_of_diamonds));
     cartas.add(new Carta(2, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_2_of_diamonds));
@@ -33,8 +33,8 @@ public class Baraja {
     cartas.add(new Carta(8, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_8_of_diamonds));
     cartas.add(new Carta(9, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_9_of_diamonds));
     cartas.add(new Carta(10, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_10_of_diamonds));
-    cartas.add(new Carta(11, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_10_of_diamonds));
-    cartas.add(new Carta(12, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_10_of_diamonds));
+    cartas.add(new Carta(10, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_10_of_diamonds));
+    cartas.add(new Carta(10, Figura.DIAMANTE, Posicion.ABIERTA, R.drawable.ic_10_of_diamonds));
 
     cartas.add(new Carta(1, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_ace_of_spades));
     cartas.add(new Carta(2, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_2_of_spades));
@@ -46,8 +46,8 @@ public class Baraja {
     cartas.add(new Carta(8, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_8_of_spades));
     cartas.add(new Carta(9, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_9_of_spades));
     cartas.add(new Carta(10, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_10_of_spades));
-    cartas.add(new Carta(11, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_10_of_spades));
-    cartas.add(new Carta(12, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_10_of_spades));
+    cartas.add(new Carta(10, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_10_of_spades));
+    cartas.add(new Carta(10, Figura.ESPADA, Posicion.ABIERTA, R.drawable.ic_10_of_spades));
 
     cartas.add(new Carta(1, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_ace_of_hearts));
     cartas.add(new Carta(2, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_2_of_hearts));
@@ -59,8 +59,8 @@ public class Baraja {
     cartas.add(new Carta(8, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_8_of_hearts));
     cartas.add(new Carta(9, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_9_of_hearts));
     cartas.add(new Carta(10, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_10_of_hearts));
-    cartas.add(new Carta(11, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_10_of_hearts));
-    cartas.add(new Carta(12, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_10_of_hearts));
+    cartas.add(new Carta(10, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_10_of_hearts));
+    cartas.add(new Carta(10, Figura.CORAZON, Posicion.ABIERTA, R.drawable.ic_10_of_hearts));
   }
 
   public void barajar(){
